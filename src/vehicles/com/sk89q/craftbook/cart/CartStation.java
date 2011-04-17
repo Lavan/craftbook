@@ -31,6 +31,12 @@ public class CartStation extends CartMechanism {
         return new Vector(face.getModX()*0.1, face.getModY()*0.1, face.getModZ()*0.1);
     }
     
-    // ought to have an autolaunch-when-enter option someday.
-    
+     public void enter(Minecart cart, Block entered)
+     {
+        Block thingy = entered.getFace(BlockFace.DOWN, 1);
+        Block director = pickDirector(thingy, "station");
+        if (director == null) return;
+        launch(cart, director);
+     }
+   
 }

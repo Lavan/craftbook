@@ -39,4 +39,11 @@ public class MinecartManager {
         CartMechanism thingy = mechanisms.get(to.getFace(BlockFace.DOWN).getType());
         if (thingy != null) thingy.impact((Minecart)event.getVehicle(), to, event.getFrom().getBlock());
     }
+    
+    public void handleMinecartEnter(VehicleEnterEvent event)
+    {
+        Block to = event.getVehicle().getLocation().getBlock();
+    	CartMechanism thingy = mechanisms.get(to.getFace(BlockFace.DOWN).getType());
+        if (thingy != null) thingy.enter((Minecart)event.getVehicle(), to);
+    }
 }

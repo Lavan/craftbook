@@ -18,6 +18,7 @@ import com.sk89q.craftbook.*;
  */
 public abstract class CartMechanism {
     public abstract void impact(Minecart cart, Block entered, Block from);
+    public void enter(Minecart cart, Block entered) {}
     
     /**
      * Determins if a cart mechanism should be enabled.
